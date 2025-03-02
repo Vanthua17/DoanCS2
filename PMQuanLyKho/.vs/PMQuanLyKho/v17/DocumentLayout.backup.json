@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\PMQuanLyKho\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\viewmodel\\nhapkhoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\viewmodel\\nhapkhoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\viewmodel\\xuatkhoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\viewmodel\\xuatkhoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\viewmodel\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\viewmodel\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|f:\\pmquanlykho\\pmquanlykho\\customerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{83458810-504B-4473-834B-480A39B4E65E}|PMQuanLyKho\\PMQuanLyKho.csproj|solutionrelative:pmquanlykho\\customerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 209,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NhapKhoViewModel.cs",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\NhapKhoViewModel.cs",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\ViewModel\\NhapKhoViewModel.cs",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\NhapKhoViewModel.cs",
+              "RelativeToolTip": "PMQuanLyKho\\ViewModel\\NhapKhoViewModel.cs",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAuwO8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T17:10:54.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "XuatKhoViewModel.cs",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\XuatKhoViewModel.cs",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\ViewModel\\XuatKhoViewModel.cs",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\XuatKhoViewModel.cs",
+              "RelativeToolTip": "PMQuanLyKho\\ViewModel\\XuatKhoViewModel.cs",
+              "ViewState": "AgIAAJUBAAAAAAAAAAAAAJwBAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T17:07:54.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "PMQuanLyKho\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAxwHwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T16:57:12.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainResource.xaml",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\ResourceXAML\\MainResource.xaml",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\ResourceXAML\\MainResource.xaml",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\ResourceXAML\\MainResource.xaml",
+              "RelativeToolTip": "PMQuanLyKho\\ResourceXAML\\MainResource.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T16:54:12.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerViewModel.cs",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\CustomerViewModel.cs",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\ViewModel\\CustomerViewModel.cs",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\ViewModel\\CustomerViewModel.cs",
+              "RelativeToolTip": "PMQuanLyKho\\ViewModel\\CustomerViewModel.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAAwNIAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T16:52:19.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerWindow.xaml",
+              "DocumentMoniker": "F:\\PMQuanLyKho\\PMQuanLyKho\\CustomerWindow.xaml",
+              "RelativeDocumentMoniker": "PMQuanLyKho\\CustomerWindow.xaml",
+              "ToolTip": "F:\\PMQuanLyKho\\PMQuanLyKho\\CustomerWindow.xaml",
+              "RelativeToolTip": "PMQuanLyKho\\CustomerWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T16:50:28.298Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

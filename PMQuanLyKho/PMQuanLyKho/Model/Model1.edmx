@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PMQuanLyKhoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="don_vi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_don_vi" Type="nvarchar" MaxLength="256" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="khach_hang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_khach_hang" Type="nvarchar" MaxLength="256" />
+          <Property Name="dia_chi" Type="nvarchar" MaxLength="512" />
+          <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="loai">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_loai" Type="nvarchar" MaxLength="200" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="nguoi_dung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_nguoi_dung" Type="nvarchar(max)" />
+          <Property Name="ten_dang_nhap" Type="nvarchar" MaxLength="100" />
+          <Property Name="mat_khau" Type="nvarchar(max)" />
+          <Property Name="ngay_tao" Type="datetime" />
+          <Property Name="id_quyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nha_cung_cap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_nhacc" Type="nvarchar" MaxLength="256" />
+          <Property Name="dia_chi" Type="nvarchar" MaxLength="512" />
+          <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="nhap_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="id_vat_tu" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="id_loai" Type="int" Nullable="false" />
+          <Property Name="id_nguoi_dung" Type="int" Nullable="false" />
+          <Property Name="so_luong" Type="int" />
+          <Property Name="ngay_nhap" Type="datetime" />
+          <Property Name="gia_nhap" Type="float" />
+          <Property Name="gia_ban" Type="float" />
+          <Property Name="mo_ta" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="quyen_nguoi_dung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_quyen" Type="nvarchar" MaxLength="256" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="vat_tu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ten_vat_tu" Type="nvarchar" MaxLength="256" />
+          <Property Name="id_don_vi" Type="int" Nullable="false" />
+          <Property Name="id_nhacc" Type="int" Nullable="false" />
+          <Property Name="id_loai" Type="int" Nullable="false" />
+          <Property Name="QRCode" Type="nvarchar" MaxLength="512" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="512" />
+          <Property Name="mo_ta" Type="nvarchar" MaxLength="512" />
+          <Property Name="ngay_tao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="xuat_Kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="id_khach_hang" Type="int" Nullable="false" />
+          <Property Name="id_hoadon" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="id_nguoi_dung" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" />
+          <Property Name="ngay_xuat" Type="datetime" />
+          <Property Name="id_nhap_kho" Type="nvarchar" MaxLength="128" />
+          <Property Name="mo_ta" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__nguoi_dun__id_qu__4BAC3F29">
+          <End Role="quyen_nguoi_dung" Type="Self.quyen_nguoi_dung" Multiplicity="1" />
+          <End Role="nguoi_dung" Type="Self.nguoi_dung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quyen_nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nguoi_dung">
+              <PropertyRef Name="id_quyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_loa__5070F446">
+          <End Role="loai" Type="Self.loai" Multiplicity="1" />
+          <End Role="nhap_kho" Type="Self.nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_ngu__5165187F">
+          <End Role="nguoi_dung" Type="Self.nguoi_dung" Multiplicity="1" />
+          <End Role="nhap_kho" Type="Self.nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_nguoi_dung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_vat__4F7CD00D">
+          <End Role="vat_tu" Type="Self.vat_tu" Multiplicity="1" />
+          <End Role="nhap_kho" Type="Self.nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vat_tu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_vat_tu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vat_tu__id_loai__44FF419A">
+          <End Role="loai" Type="Self.loai" Multiplicity="1" />
+          <End Role="vat_tu" Type="Self.vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vat_tu__id_nhacc__440B1D61">
+          <End Role="nha_cung_cap" Type="Self.nha_cung_cap" Multiplicity="1" />
+          <End Role="vat_tu" Type="Self.vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nha_cung_cap">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_nhacc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vat_tu__ngay_tao__4316F928">
+          <End Role="don_vi" Type="Self.don_vi" Multiplicity="1" />
+          <End Role="vat_tu" Type="Self.vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="don_vi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_don_vi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_kha__5535A963">
+          <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="1" />
+          <End Role="xuat_Kho" Type="Self.xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khach_hang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_khach_hang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_ngu__5629CD9C">
+          <End Role="nguoi_dung" Type="Self.nguoi_dung" Multiplicity="1" />
+          <End Role="xuat_Kho" Type="Self.xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_nguoi_dung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_nha__571DF1D5">
+          <End Role="nhap_kho" Type="Self.nhap_kho" Multiplicity="0..1" />
+          <End Role="xuat_Kho" Type="Self.xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhap_kho">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_nhap_kho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PMQuanLyKhoModelStoreContainer">
+          <EntitySet Name="don_vi" EntityType="Self.don_vi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khach_hang" EntityType="Self.khach_hang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai" EntityType="Self.loai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nguoi_dung" EntityType="Self.nguoi_dung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nha_cung_cap" EntityType="Self.nha_cung_cap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhap_kho" EntityType="Self.nhap_kho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="quyen_nguoi_dung" EntityType="Self.quyen_nguoi_dung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vat_tu" EntityType="Self.vat_tu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xuat_Kho" EntityType="Self.xuat_Kho" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__nguoi_dun__id_qu__4BAC3F29" Association="Self.FK__nguoi_dun__id_qu__4BAC3F29">
+            <End Role="quyen_nguoi_dung" EntitySet="quyen_nguoi_dung" />
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_loa__5070F446" Association="Self.FK__nhap_kho__id_loa__5070F446">
+            <End Role="loai" EntitySet="loai" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_ngu__5165187F" Association="Self.FK__nhap_kho__id_ngu__5165187F">
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_vat__4F7CD00D" Association="Self.FK__nhap_kho__id_vat__4F7CD00D">
+            <End Role="vat_tu" EntitySet="vat_tu" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vat_tu__id_loai__44FF419A" Association="Self.FK__vat_tu__id_loai__44FF419A">
+            <End Role="loai" EntitySet="loai" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vat_tu__id_nhacc__440B1D61" Association="Self.FK__vat_tu__id_nhacc__440B1D61">
+            <End Role="nha_cung_cap" EntitySet="nha_cung_cap" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vat_tu__ngay_tao__4316F928" Association="Self.FK__vat_tu__ngay_tao__4316F928">
+            <End Role="don_vi" EntitySet="don_vi" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_kha__5535A963" Association="Self.FK__xuat_Kho__id_kha__5535A963">
+            <End Role="khach_hang" EntitySet="khach_hang" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_ngu__5629CD9C" Association="Self.FK__xuat_Kho__id_ngu__5629CD9C">
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_nha__571DF1D5" Association="Self.FK__xuat_Kho__id_nha__571DF1D5">
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PMQuanLyKhoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PMQuanLyKhoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="don_vi" EntityType="PMQuanLyKhoModel.don_vi" />
+          <EntitySet Name="khach_hang" EntityType="PMQuanLyKhoModel.khach_hang" />
+          <EntitySet Name="loai" EntityType="PMQuanLyKhoModel.loai" />
+          <EntitySet Name="nguoi_dung" EntityType="PMQuanLyKhoModel.nguoi_dung" />
+          <EntitySet Name="nha_cung_cap" EntityType="PMQuanLyKhoModel.nha_cung_cap" />
+          <EntitySet Name="nhap_kho" EntityType="PMQuanLyKhoModel.nhap_kho" />
+          <EntitySet Name="quyen_nguoi_dung" EntityType="PMQuanLyKhoModel.quyen_nguoi_dung" />
+          <EntitySet Name="sysdiagrams" EntityType="PMQuanLyKhoModel.sysdiagrams" />
+          <EntitySet Name="vat_tu" EntityType="PMQuanLyKhoModel.vat_tu" />
+          <EntitySet Name="xuat_Kho" EntityType="PMQuanLyKhoModel.xuat_Kho" />
+          <AssociationSet Name="FK__vat_tu__ngay_tao__4316F928" Association="PMQuanLyKhoModel.FK__vat_tu__ngay_tao__4316F928">
+            <End Role="don_vi" EntitySet="don_vi" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_kha__5535A963" Association="PMQuanLyKhoModel.FK__xuat_Kho__id_kha__5535A963">
+            <End Role="khach_hang" EntitySet="khach_hang" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_loa__5070F446" Association="PMQuanLyKhoModel.FK__nhap_kho__id_loa__5070F446">
+            <End Role="loai" EntitySet="loai" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vat_tu__id_loai__44FF419A" Association="PMQuanLyKhoModel.FK__vat_tu__id_loai__44FF419A">
+            <End Role="loai" EntitySet="loai" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nguoi_dun__id_qu__4BAC3F29" Association="PMQuanLyKhoModel.FK__nguoi_dun__id_qu__4BAC3F29">
+            <End Role="quyen_nguoi_dung" EntitySet="quyen_nguoi_dung" />
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_ngu__5165187F" Association="PMQuanLyKhoModel.FK__nhap_kho__id_ngu__5165187F">
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_ngu__5629CD9C" Association="PMQuanLyKhoModel.FK__xuat_Kho__id_ngu__5629CD9C">
+            <End Role="nguoi_dung" EntitySet="nguoi_dung" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__vat_tu__id_nhacc__440B1D61" Association="PMQuanLyKhoModel.FK__vat_tu__id_nhacc__440B1D61">
+            <End Role="nha_cung_cap" EntitySet="nha_cung_cap" />
+            <End Role="vat_tu" EntitySet="vat_tu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhap_kho__id_vat__4F7CD00D" Association="PMQuanLyKhoModel.FK__nhap_kho__id_vat__4F7CD00D">
+            <End Role="vat_tu" EntitySet="vat_tu" />
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__xuat_Kho__id_nha__571DF1D5" Association="PMQuanLyKhoModel.FK__xuat_Kho__id_nha__571DF1D5">
+            <End Role="nhap_kho" EntitySet="nhap_kho" />
+            <End Role="xuat_Kho" EntitySet="xuat_Kho" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="don_vi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_don_vi" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="vat_tu" Relationship="PMQuanLyKhoModel.FK__vat_tu__ngay_tao__4316F928" FromRole="don_vi" ToRole="vat_tu" />
+        </EntityType>
+        <EntityType Name="khach_hang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_khach_hang" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="so_dien_thoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="xuat_Kho" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_kha__5535A963" FromRole="khach_hang" ToRole="xuat_Kho" />
+        </EntityType>
+        <EntityType Name="loai">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_loai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="nhap_kho" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_loa__5070F446" FromRole="loai" ToRole="nhap_kho" />
+          <NavigationProperty Name="vat_tu" Relationship="PMQuanLyKhoModel.FK__vat_tu__id_loai__44FF419A" FromRole="loai" ToRole="vat_tu" />
+        </EntityType>
+        <EntityType Name="nguoi_dung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_nguoi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ten_dang_nhap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mat_khau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <Property Name="id_quyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="quyen_nguoi_dung" Relationship="PMQuanLyKhoModel.FK__nguoi_dun__id_qu__4BAC3F29" FromRole="nguoi_dung" ToRole="quyen_nguoi_dung" />
+          <NavigationProperty Name="nhap_kho" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_ngu__5165187F" FromRole="nguoi_dung" ToRole="nhap_kho" />
+          <NavigationProperty Name="xuat_Kho" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_ngu__5629CD9C" FromRole="nguoi_dung" ToRole="xuat_Kho" />
+        </EntityType>
+        <EntityType Name="nha_cung_cap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_nhacc" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="so_dien_thoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="vat_tu" Relationship="PMQuanLyKhoModel.FK__vat_tu__id_nhacc__440B1D61" FromRole="nha_cung_cap" ToRole="vat_tu" />
+        </EntityType>
+        <EntityType Name="nhap_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_vat_tu" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_loai" Type="Int32" Nullable="false" />
+          <Property Name="id_nguoi_dung" Type="Int32" Nullable="false" />
+          <Property Name="so_luong" Type="Int32" />
+          <Property Name="ngay_nhap" Type="DateTime" Precision="3" />
+          <Property Name="gia_nhap" Type="Double" />
+          <Property Name="gia_ban" Type="Double" />
+          <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="loai" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_loa__5070F446" FromRole="nhap_kho" ToRole="loai" />
+          <NavigationProperty Name="nguoi_dung" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_ngu__5165187F" FromRole="nhap_kho" ToRole="nguoi_dung" />
+          <NavigationProperty Name="vat_tu" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_vat__4F7CD00D" FromRole="nhap_kho" ToRole="vat_tu" />
+          <NavigationProperty Name="xuat_Kho" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_nha__571DF1D5" FromRole="nhap_kho" ToRole="xuat_Kho" />
+        </EntityType>
+        <EntityType Name="quyen_nguoi_dung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_quyen" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="nguoi_dung" Relationship="PMQuanLyKhoModel.FK__nguoi_dun__id_qu__4BAC3F29" FromRole="quyen_nguoi_dung" ToRole="nguoi_dung" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vat_tu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ten_vat_tu" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="id_don_vi" Type="Int32" Nullable="false" />
+          <Property Name="id_nhacc" Type="Int32" Nullable="false" />
+          <Property Name="id_loai" Type="Int32" Nullable="false" />
+          <Property Name="QRCode" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="BarCode" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="don_vi" Relationship="PMQuanLyKhoModel.FK__vat_tu__ngay_tao__4316F928" FromRole="vat_tu" ToRole="don_vi" />
+          <NavigationProperty Name="loai" Relationship="PMQuanLyKhoModel.FK__vat_tu__id_loai__44FF419A" FromRole="vat_tu" ToRole="loai" />
+          <NavigationProperty Name="nha_cung_cap" Relationship="PMQuanLyKhoModel.FK__vat_tu__id_nhacc__440B1D61" FromRole="vat_tu" ToRole="nha_cung_cap" />
+          <NavigationProperty Name="nhap_kho" Relationship="PMQuanLyKhoModel.FK__nhap_kho__id_vat__4F7CD00D" FromRole="vat_tu" ToRole="nhap_kho" />
+        </EntityType>
+        <EntityType Name="xuat_Kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_khach_hang" Type="Int32" Nullable="false" />
+          <Property Name="id_hoadon" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="id_nguoi_dung" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="ngay_xuat" Type="DateTime" Precision="3" />
+          <Property Name="id_nhap_kho" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="khach_hang" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_kha__5535A963" FromRole="xuat_Kho" ToRole="khach_hang" />
+          <NavigationProperty Name="nguoi_dung" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_ngu__5629CD9C" FromRole="xuat_Kho" ToRole="nguoi_dung" />
+          <NavigationProperty Name="nhap_kho" Relationship="PMQuanLyKhoModel.FK__xuat_Kho__id_nha__571DF1D5" FromRole="xuat_Kho" ToRole="nhap_kho" />
+        </EntityType>
+        <Association Name="FK__vat_tu__ngay_tao__4316F928">
+          <End Type="PMQuanLyKhoModel.don_vi" Role="don_vi" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.vat_tu" Role="vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="don_vi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_don_vi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_kha__5535A963">
+          <End Type="PMQuanLyKhoModel.khach_hang" Role="khach_hang" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.xuat_Kho" Role="xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khach_hang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_khach_hang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_loa__5070F446">
+          <End Type="PMQuanLyKhoModel.loai" Role="loai" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.nhap_kho" Role="nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vat_tu__id_loai__44FF419A">
+          <End Type="PMQuanLyKhoModel.loai" Role="loai" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.vat_tu" Role="vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nguoi_dun__id_qu__4BAC3F29">
+          <End Type="PMQuanLyKhoModel.quyen_nguoi_dung" Role="quyen_nguoi_dung" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.nguoi_dung" Role="nguoi_dung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quyen_nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nguoi_dung">
+              <PropertyRef Name="id_quyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_ngu__5165187F">
+          <End Type="PMQuanLyKhoModel.nguoi_dung" Role="nguoi_dung" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.nhap_kho" Role="nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_nguoi_dung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_ngu__5629CD9C">
+          <End Type="PMQuanLyKhoModel.nguoi_dung" Role="nguoi_dung" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.xuat_Kho" Role="xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nguoi_dung">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_nguoi_dung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__vat_tu__id_nhacc__440B1D61">
+          <End Type="PMQuanLyKhoModel.nha_cung_cap" Role="nha_cung_cap" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.vat_tu" Role="vat_tu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nha_cung_cap">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vat_tu">
+              <PropertyRef Name="id_nhacc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhap_kho__id_vat__4F7CD00D">
+          <End Type="PMQuanLyKhoModel.vat_tu" Role="vat_tu" Multiplicity="1" />
+          <End Type="PMQuanLyKhoModel.nhap_kho" Role="nhap_kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vat_tu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nhap_kho">
+              <PropertyRef Name="id_vat_tu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__xuat_Kho__id_nha__571DF1D5">
+          <End Type="PMQuanLyKhoModel.nhap_kho" Role="nhap_kho" Multiplicity="0..1" />
+          <End Type="PMQuanLyKhoModel.xuat_Kho" Role="xuat_Kho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhap_kho">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="xuat_Kho">
+              <PropertyRef Name="id_nhap_kho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PMQuanLyKhoModelStoreContainer" CdmEntityContainer="PMQuanLyKhoEntities">
+          <EntitySetMapping Name="don_vi">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.don_vi">
+              <MappingFragment StoreEntitySet="don_vi">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="ten_don_vi" ColumnName="ten_don_vi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khach_hang">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.khach_hang">
+              <MappingFragment StoreEntitySet="khach_hang">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+                <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+                <ScalarProperty Name="ten_khach_hang" ColumnName="ten_khach_hang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.loai">
+              <MappingFragment StoreEntitySet="loai">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="ten_loai" ColumnName="ten_loai" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nguoi_dung">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.nguoi_dung">
+              <MappingFragment StoreEntitySet="nguoi_dung">
+                <ScalarProperty Name="id_quyen" ColumnName="id_quyen" />
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mat_khau" ColumnName="mat_khau" />
+                <ScalarProperty Name="ten_dang_nhap" ColumnName="ten_dang_nhap" />
+                <ScalarProperty Name="ten_nguoi_dung" ColumnName="ten_nguoi_dung" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nha_cung_cap">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.nha_cung_cap">
+              <MappingFragment StoreEntitySet="nha_cung_cap">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+                <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+                <ScalarProperty Name="ten_nhacc" ColumnName="ten_nhacc" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhap_kho">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.nhap_kho">
+              <MappingFragment StoreEntitySet="nhap_kho">
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="gia_ban" ColumnName="gia_ban" />
+                <ScalarProperty Name="gia_nhap" ColumnName="gia_nhap" />
+                <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="id_nguoi_dung" ColumnName="id_nguoi_dung" />
+                <ScalarProperty Name="id_loai" ColumnName="id_loai" />
+                <ScalarProperty Name="id_vat_tu" ColumnName="id_vat_tu" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="quyen_nguoi_dung">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.quyen_nguoi_dung">
+              <MappingFragment StoreEntitySet="quyen_nguoi_dung">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="ten_quyen" ColumnName="ten_quyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vat_tu">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.vat_tu">
+              <MappingFragment StoreEntitySet="vat_tu">
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+                <ScalarProperty Name="id_loai" ColumnName="id_loai" />
+                <ScalarProperty Name="id_nhacc" ColumnName="id_nhacc" />
+                <ScalarProperty Name="id_don_vi" ColumnName="id_don_vi" />
+                <ScalarProperty Name="ten_vat_tu" ColumnName="ten_vat_tu" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xuat_Kho">
+            <EntityTypeMapping TypeName="PMQuanLyKhoModel.xuat_Kho">
+              <MappingFragment StoreEntitySet="xuat_Kho">
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="id_nhap_kho" ColumnName="id_nhap_kho" />
+                <ScalarProperty Name="ngay_xuat" ColumnName="ngay_xuat" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="id_nguoi_dung" ColumnName="id_nguoi_dung" />
+                <ScalarProperty Name="id_hoadon" ColumnName="id_hoadon" />
+                <ScalarProperty Name="id_khach_hang" ColumnName="id_khach_hang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
